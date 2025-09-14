@@ -17,9 +17,9 @@
 }
 
 body {
-    background-color: black;
-    background-image: url("../images/textures/nnnoise\(1\).svg");
-    background-size: auto;
+    background: url("../images/textures/149.jpg"), var(--mfgreen);
+    background-blend-mode: color-burn;
+    background-size: contain;
     color: white;
     font-family: "Podkova", sans-serif;
 }
@@ -101,7 +101,7 @@ ol {
     align-items: center;
     padding: 1rem;
     text-wrap: balance;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 li div {
