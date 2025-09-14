@@ -1,12 +1,12 @@
 
-let isReversed = true; // We want reversed as the default
+let isReversed = true; // reverse list by default
 
-// Reverse list content on initial page load
+// reverse list content on initial page load
 window.addEventListener('DOMContentLoaded', () => {
     const list = document.getElementById('myList');
     const items = Array.from(list.children).reverse();
 
-    // Clear and reinsert reversed items
+    // clear and reinsert reversed items
     list.innerHTML = '';
     items.forEach(item => list.appendChild(item));
     list.setAttribute('reversed', '');
