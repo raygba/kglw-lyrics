@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&family=Podkova:wght@400..800&family=UnifrakturCook:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --mfblack: #1A261E;
+    --mfgreen: #5FBF50;
+}
+
+::selection {
+    background-color: var(--mfgreen);
+    color: black;
+}
+
+body {
+    background-color: black;
+    background-image: url("../images/textures/nnnoise\(1\).svg");
+    background-size: auto;
+    color: white;
+    font-family: "Podkova", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: "Jacquard 24", serif;
+    font-size: 3rem;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline dotted 0.5px;
+}
+
+footer {
+    background-color: black;
+    padding: 3rem;
+    text-align: center;
+    clear: left;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+
+    a {
+        color: white;
+    }
+
+    p {
+        margin: 1rem;
+    }
+
+}
+
+main {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+main * {
+    transition: 0.2s ease all;
+}
+
+h2 {
+    margin: 2rem 4rem;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 2rem auto;
+    width: 95%;
+    margin: auto;
+}
+
+#myList li {
+    /* margin: 2rem 2rem; */
+    /* padding: 1rem; */
+    min-height: 475px;
+    border: 1px solid white;
+    width: 375px;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-wrap: balance;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+li div {
+    display: inline-flex;
+    flex-flow: column;
+    width: fit-content;
+}
+
+li:hover {
+    /* box-shadow: 4px 4px 0 var(--mfgreen);
+    border: 1px solid var(--mfgreen);
+    position: relative;
+    bottom: 4px;
+    right: 4px; */
+
+    img {
+        width: 310px;
+    }
+}
+
+li * {
+    display: block;
+}
+
+li a {
+    color: white;
+}
+
+img {
+    width: 300px;
+    margin: 1rem 0;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.title:not(span) {
+    max-width: 25ch;
+}
+
+.year {
+    font-size: 1rem;
+    /* font-style: italic; */
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    font-weight: normal;
+    display: inline;
+    position: relative;
+}
+
+.genre {
+    font-style: italic;
+    /* border: 1px dotted lightyellow; */
+    width: 100%;
+    padding: 2%;
+    /* text-align: center; */
+}
+
+.page-head {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+.page-head button {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+/* ------------------------------------------------------ ALBUM PAGES */
+
+.album-page {
+    text-align: left;
+    width: 80%;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    padding: 2rem;
+    margin: 1rem auto 5rem;
+    display: flex;
+    flex-flow: row;
+
+    .title,
+    .year,
+    .label {
+        margin: 1rem 0;
+        padding: 0;
+    }
+
+    img {
+        margin: 0 2rem 0;
+        align-self: start;
+        width: 350px;
+    }
+
+    img:hover {
+        width: 450px;
+    }
+}
+
+.album-page div>p {
+    max-width: 65ch;
+    margin: 2rem 0;
+}
+
+.album-page>section {
+    width: 60%;
+}
+
+.album-page.light {
+    background-color: rgba(225, 225, 225, 75%);
+    color: black;
+
+    .tracklist li:nth-child(even) {
+        /* background-color: rgba(0, 0, 0, 10%); */
+        border: 1px outset black;
+    }
+
+}
+
+.album-page.dark {
+    background-color: rgba(0, 0, 0, 75%);
+    color: white;
+
+    .tracklist li:nth-child(even) {
+        /* background-color: rgba(225, 225, 225, 10%); */
+        border: 1px outset white;
+    }
+}
+
+#flightb741 {
+    /* background-image: url("../images/covers/flight-b741.jpg");
+    background-size: cover; */
+    /* background: #48B0D9; */
+    background: url("../images/textures/029.jpg"), #79C1F4;
+    background-blend-mode: screen;
+    background-size: contain;
+    /* color: black; */
+}
+
+#fmb {
+    background: url("../images/textures/131.jpg"), #4052B8;
+    background-blend-mode: darken;
+    background-size: auto;
+    /* color: white; */
+}
+
+#kg {
+    background: url("../images/textures/195.jpg"), #118188;
+    background-blend-mode: overlay;
+    background-size: contain;
+}
+
+.label {
+    margin: 1rem;
+}
+
+.note {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tracklist,
+.tracklist li {
+    padding: 0;
+    list-style-position: inside;
+}
+
+.tracklist {
+    display: initial;
+
+    li {
+        background-color: transparent;
+        border: none;
+        padding: 0 1rem;
+        margin: 0.5rem;
+    }
+
+    details {
+        display: inline;
+        /* border: 1px solid black; */
+        width: 90%;
+        text-wrap: auto;
+
+        p {
+            padding: 0.5rem 1rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    summary {
+        display: list-item;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+
+    details[open] summary {
+        font-weight: bold;
+    }
+
+    details[open] {
+        margin-bottom: 1rem;
+    }
+}
+
+/* 
+.tracklist li:nth-child(even) {
+    background-color: black;
+} */
+
+
+/* ---------------------------------------------------------------------- */
+/* ---------- MEDIA QUERIES */
+@media screen and (max-width: 1000px) {
+
+    body,
+    main,
+    ol {
+        width: 100%;
+        text-wrap: unset;
+    }
+
+    li {
+        width: 190px;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    li:hover {
+        img {
+            width: 150px;
+        }
+    }
+
+    .title {
+        font-size: 1rem;
+        hyphens: auto;
+        max-width: 10ch;
+    }
+}
