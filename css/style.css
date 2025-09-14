@@ -187,7 +187,7 @@ img {
     width: 80%;
     /* background-color: rgba(0, 0, 0, 0.8); */
     padding: 2rem;
-    margin: 1rem auto 5rem;
+    margin: 5rem auto 5rem;
     display: flex;
     flex-flow: row;
 
@@ -202,6 +202,7 @@ img {
         margin: 0 2rem 0;
         align-self: start;
         width: 350px;
+        transition: 0.4s;
     }
 
     img:hover {
@@ -259,6 +260,12 @@ img {
 #kg {
     background: url("../images/textures/195.jpg"), #118188;
     background-blend-mode: overlay;
+    background-size: contain;
+}
+
+#nonagon {
+    background: url("../images/textures/028.jpg"), #8C2920;
+    background-blend-mode: darken;
     background-size: contain;
 }
 
