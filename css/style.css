@@ -269,6 +269,12 @@ img {
     background-size: contain;
 }
 
+#oddments {
+    background: url("../images/textures/017.jpg"), #D98943;
+    background-blend-mode: color-dodge;
+    background-size: cover;
+}
+
 .label {
     margin: 1rem;
 }
@@ -356,5 +362,34 @@ img {
         font-size: 1rem;
         hyphens: auto;
         max-width: 10ch;
+    }
+
+    .album-page {
+        width: 90%;
+        display: block;
+
+        img {
+            width: 400px;
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        img:hover {
+            width: 425px;
+        }
+
+        section {
+            width: 100%;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        .tracklist {
+            display: block;
+            width: 100%;
+        }
     }
 }
