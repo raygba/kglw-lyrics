@@ -32,6 +32,9 @@ header {
     background-color: black;
     color: white;
     margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 header h1 {
@@ -172,12 +175,13 @@ img {
 }
 
 .page-head button {
-    background: none;
-    border: none;
+    background: black;
+    /* border: none; */
     color: white;
     text-decoration: underline;
     padding: 1rem;
     margin: 1rem;
+    align-self: center;
 }
 
 /* ------------------------------------------------------ ALBUM PAGES */
@@ -270,9 +274,9 @@ img {
 }
 
 #oddments {
-    background: url("../images/textures/017.jpg"), #D98943;
-    background-blend-mode: color-dodge;
-    background-size: cover;
+    background: url("../images/textures/287.jpg"), #D98943;
+    background-blend-mode: difference;
+    background-size: contain;
 }
 
 .label {
