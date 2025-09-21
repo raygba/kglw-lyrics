@@ -121,7 +121,7 @@ li:hover {
     right: 4px; */
 
     img {
-        width: 310px;
+        width: 102%;
     }
 }
 
@@ -134,8 +134,9 @@ li a {
 }
 
 img {
-    width: 300px;
+    width: 100%;
     margin: 1rem 0;
+    /* position: relative; */
 }
 
 .title {
@@ -245,20 +246,15 @@ img {
 }
 
 #flightb741 {
-    /* background-image: url("../images/covers/flight-b741.jpg");
-    background-size: cover; */
-    /* background: #48B0D9; */
     background: url("../images/textures/029.jpg"), #79C1F4;
     background-blend-mode: screen;
     background-size: contain;
-    /* color: black; */
 }
 
 #fmb {
     background: url("../images/textures/131.jpg"), #4052B8;
     background-blend-mode: darken;
     background-size: auto;
-    /* color: white; */
 }
 
 #kg {
@@ -274,9 +270,10 @@ img {
 }
 
 #oddments {
-    background: url("../images/textures/287.jpg"), #D98943;
-    background-blend-mode: difference;
-    background-size: contain;
+    background: url("../images/textures/033.jpg"), linear-gradient(to left, #A78778 0%, 12.348178029060364%, #A8864B 24.696356058120728%, 45.89776097623367%, #5B7065 67.09916589434661%, 83.5495829471733%, #64624D 100%);
+    ;
+    background-blend-mode: color-dodge;
+    background-size: round;
 }
 
 #changes {
@@ -350,21 +347,23 @@ img {
     body,
     main,
     ol {
-        width: 100%;
+        /* width: 100%; */
         text-wrap: unset;
     }
 
-    li {
-        width: 190px;
+    #myList li {
+        width: 50%;
+        min-height: min-content;
+
 
         img {
-            width: 150px;
+            width: 100%;
         }
     }
 
     li:hover {
         img {
-            width: 150px;
+            width: 100%;
         }
     }
 
@@ -400,6 +399,10 @@ img {
         .tracklist {
             display: block;
             width: 100%;
+
+            details {
+                width: auto;
+            }
         }
     }
 }
