@@ -32,7 +32,7 @@ header {
     background-color: black;
     color: white;
     margin-bottom: 2rem;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 2;
 }
@@ -40,6 +40,7 @@ header {
 header h1 {
     font-family: "Jacquard 24", serif;
     font-size: 3rem;
+    text-align: center;
 }
 
 header a {
@@ -277,9 +278,10 @@ img {
 }
 
 #changes {
-    background: url("../images/textures/011.jpg"), #6FBFA8;
-    background-blend-mode: lighten;
+    background: url("../images/textures/079.jpg"), #6FBFA8;
+    background-blend-mode: color-dodge;
     background-size: contain;
+    background-repeat: round;
 }
 
 .label {
@@ -308,7 +310,7 @@ img {
     }
 
     details {
-        display: inline;
+        display: inline-block;
         /* border: 1px solid black; */
         width: 90%;
         text-wrap: auto;
