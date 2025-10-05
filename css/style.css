@@ -144,7 +144,7 @@ li div {
     transition: all 0s;
 }
 
-#myList li:hover,
+#myList li a:hover,
 #myList li a:focus {
     img {
         z-index: 1;
@@ -157,8 +157,8 @@ li div {
 
 }
 
-#myList li:hover .title,
-#myList li:hover .title>.year,
+#myList li a:hover .title,
+#myList li a:hover .title>.year,
 #myList li a:focus .title,
 #myList li a:focus .title>.year {
     display: block;
@@ -368,6 +368,10 @@ img {
     background-repeat: round;
 }
 
+#omnium {
+    background: linear-gradient(to right, #FFC296, #A36960);
+}
+
 .label {
     margin: 1rem;
 }
@@ -555,8 +559,10 @@ img {
             width: 100%;
 
             details {
-                width: auto;
+                width: stretch;
             }
+
+
         }
     }
 }
