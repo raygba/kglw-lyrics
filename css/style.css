@@ -28,13 +28,15 @@ header {
     display: flex;
     justify-content: center;
     padding: 1rem;
-    width: 100%;
+    /* width: 100%; */
     background-color: black;
     color: white;
     margin-bottom: 2rem;
     /* position: sticky; */
-    top: 0;
+    /* top: 0; */
     z-index: 2;
+    grid-column: span 12;
+    grid-row: 1 / span 1;
 }
 
 header h1 {
@@ -56,10 +58,11 @@ footer {
     background-color: black;
     padding: 3rem;
     text-align: center;
-    clear: left;
-    position: relative;
-    bottom: 0;
+    clear: both;
+    /* position: relative; */
+    /* bottom: 0; */
     width: 100%;
+    grid-column: span 12;
 
 
     a {
@@ -85,67 +88,42 @@ h2 {
     margin: 2rem 4rem;
 }
 
-ol {
+#albumList {
     list-style-type: none;
     list-style-position: inside;
-    /* display: flex;
-    flex-flow: row wrap; */
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(12, 1fr);
     gap: 0;
-    /* margin: 2rem auto; */
     width: 100%;
     margin: auto;
-}
 
-#myList {
     li a {
         display: inline-block;
         height: 0;
     }
 }
 
-#myList li a *:not(img),
-#myList li p:not(img) {
+#albumList li a *:not(img),
+#albumList li p:not(img) {
     display: none;
 }
 
-#myList li {
-    /* margin: 2rem 2rem; */
-    /* padding: 1rem; */
-    /* min-height: 475px; */
-    /* border: 1px solid white; */
-    /* width: 375px; */
+#albumList li {
+    grid-column: span 2;
     justify-content: center;
     align-items: center;
     min-height: fit-content;
     max-width: fit-content;
     margin: 0;
     padding: 0;
-    /* display: contents; */
-    /* padding: 1rem 0; */
-    /* text-wrap: balance; */
-    /* background-color: rgba(0, 0, 0, 0.8); */
 }
 
-/* 
-li div {
-    display: inline-flex;
-    flex-flow: column;
-    width: fit-content;
-} */
-
-#myList li a img {
-    /* border: 1px solid #00ff00; */
-    /* for dev */
-}
-
-#myList li img {
+#albumList li img {
     transition: all 0s;
 }
 
-#myList li a:hover,
-#myList li a:focus {
+#albumList li a:hover,
+#albumList li a:focus {
     img {
         z-index: 1;
         position: relative;
@@ -157,18 +135,16 @@ li div {
 
 }
 
-#myList li a:hover .title,
-#myList li a:hover .title>.year,
-#myList li a:focus .title,
-#myList li a:focus .title>.year {
+#albumList li a:hover .title,
+#albumList li a:hover .title>.year,
+#albumList li a:focus .title,
+#albumList li a:focus .title>.year {
     display: block;
     position: absolute;
     z-index: 2;
     font-weight: 900;
-    font-size: 2rem;
-    /* -webkit-text-stroke: 1px black;
-        text-shadow: 2px 2px 0 black; */
-        color: yellow;
+    font-size: 1.5rem;
+    color: yellow;
     text-shadow:
         1.75px 1.75px 0 #000,
         -1.75px 1.75px 0 #000,
@@ -182,25 +158,25 @@ li div {
     padding: 1% 0 0 1%;
 }
 
-#myList li .title>.year,
-#myList li a>.title>.year {
+#albumList li .title>.year,
+#albumList li a>.title>.year {
     margin: 0;
     margin-top: 1rem;
     font-size: 1.6rem !important;
 }
 
-/* #myList li img:hover, */
-/* #myList li a img:hover { */
-    /* box-shadow: 4px 4px 0 white;
+/* #albumList li img:hover, */
+/* #albumList li a img:hover { */
+/* box-shadow: 4px 4px 0 white;
     border: 1px solid white;
     position: relative;
     bottom: 4px;
     right: 4px; */
-    /* 
+/* 
     img {
         width: 102%;
     } */
-    /* width: 100%; */
+/* width: 100%; */
 /* } */
 
 /* 
@@ -242,14 +218,6 @@ img {
     position: relative;
 }
 
-.genre {
-    font-style: italic;
-    /* border: 1px dotted lightyellow; */
-    width: 100%;
-    padding: 2%;
-    /* text-align: center; */
-}
-
 .page-head {
     display: flex;
     flex-flow: row;
@@ -267,15 +235,25 @@ img {
 }
 
 /* ------------------------------------------------------ ALBUM PAGES */
+body:has(.album-page) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
 
 .album-page {
     text-align: left;
-    width: 80%;
+    grid-column: 2 / span 11;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(8, minmax(100px, max-content));
+
+    /* width: 80%; */
     /* background-color: rgba(0, 0, 0, 0.8); */
-    padding: 2rem;
-    margin: 5rem auto 5rem;
-    display: flex;
-    flex-flow: row;
+    /* padding: 2rem; */
+    /* margin: 5rem auto 5rem; */
+    /* display: flex; */
+    /* flex-flow: row; */
 
     .title,
     .year,
@@ -285,49 +263,84 @@ img {
     }
 
     img {
-        margin: 0 2rem 0;
-        align-self: start;
-        width: 350px;
+        /* margin: 0 2rem 0; */
+        /* width: 350px; */
+        width: 100%;
         transition: 0.4s;
     }
 
     img:hover {
-        width: 450px;
+        width: 102%;
     }
 }
 
-.album-page div>p {
-    max-width: 65ch;
-    margin: 2rem 0;
-}
+#album-info {
+    grid-column: 1 / span 3;
+    grid-row: 1 / -1;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 80%);
+    color: white;
 
-.album-page>section {
-    width: 60%;
 
-    div * {
+    * {
         display: block;
     }
 }
 
+#list-wrapper {
+    grid-column: span 6;
+    grid-row: 1 / -1;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 80%);
+}
+
+.album-page p {
+    max-width: 65ch;
+}
+
+/* 
 .album-page.light {
-    background-color: rgba(225, 225, 225, 75%);
+    background-color: rgba(225, 225, 225, 50%);
     color: black;
 
     .tracklist li:nth-child(even) {
-        /* background-color: rgba(0, 0, 0, 10%); */
+        background-color: rgba(0, 0, 0, 15%);
+        border: 1px outset black;
+    }
+
+    .tracklist li:nth-child(odd) {
+        background-color: rgba(255,255,255, 15%);
         border: 1px outset black;
     }
 
 }
+*/
 
-.album-page.dark {
-    background-color: rgba(0, 0, 0, 75%);
-    color: white;
+.album-page {
+    color: black;
+
+    .tracklist li {
+        /* font-weight: 600; */
+        font-size: 1.05rem;
+        padding: 0.5rem;
+    }
 
     .tracklist li:nth-child(even) {
-        /* background-color: rgba(225, 225, 225, 10%); */
-        border: 1px outset white;
+        background-color: rgba(0, 0, 0, 8%);
     }
+/* 
+    .tracklist li:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 48%);
+    } */
+}
+
+summary p {
+    margin: 0;
+    display: inline-block;
+}
+
+.lyrics {
+    font-style: italic;
 }
 
 #flightb741 {
@@ -389,7 +402,7 @@ img {
 
 .tracklist {
     display: initial;
-    list-style-type: decimal-leading-zero;
+    /* list-style-type: decimal-leading-zero; */
 
     li {
         background-color: transparent;
@@ -435,12 +448,12 @@ img {
 /* ---------------------------------------------------------------------- */
 /* ---------- MEDIA QUERIES */
 @media screen and (min-width: 700px) and (max-width:1200px) {
-    #myList {
+    #albumList {
         grid-template-columns: auto auto auto;
     }
 
-    #myList li:hover .title,
-    #myList li:hover .title>.year {
+    #albumList li:hover .title,
+    #albumList li:hover .title>.year {
         font-size: 1.5rem;
         padding: 1% 0 0 1%;
         max-width: 18ch;
@@ -483,11 +496,11 @@ img {
         text-wrap: unset;
     }
 
-    #myList {
+    #albumList {
         grid-template-columns: auto auto;
     }
 
-    #myList li {
+    #albumList li {
         width: 100%;
         /* min-height: min-content; */
 
@@ -502,8 +515,8 @@ img {
         }
     }
 
-    #myList li:hover .title,
-    #myList li:hover .title>.year {
+    #albumList li:hover .title,
+    #albumList li:hover .title>.year {
         font-size: 1.25rem;
         max-width: 18ch;
         margin: 0;
@@ -512,8 +525,8 @@ img {
         padding: 2% 0 0 2%;
     }
 
-    #myList li .title>.year,
-    #myList li a>.title>.year {
+    #albumList li .title>.year,
+    #albumList li a>.title>.year {
         margin: 0;
         margin-top: 1rem;
         font-size: 1rem !important;

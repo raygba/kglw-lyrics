@@ -3,7 +3,7 @@ let isReversed = true; // reverse list by default
 
 // reverse list content on initial page load
 window.addEventListener('DOMContentLoaded', () => {
-    const list = document.getElementById('myList');
+    const list = document.getElementById('albumList');
     const items = Array.from(list.children).reverse();
 
     // clear and reinsert reversed items
@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function toggleListOrder() {
-    const list = document.getElementById('myList');
+    const list = document.getElementById('albumList');
     const button = document.getElementById('reverseBtn');
     const items = Array.from(list.children).reverse();
 
