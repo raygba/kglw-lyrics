@@ -79,6 +79,7 @@ footer {
 main {
     width: fit-content;
     margin: 0 auto;
+    line-height: 1.5rem;
 
     a:hover,
     a:focus {
@@ -139,7 +140,14 @@ h2 {
         box-shadow: 8px 8px 0 black;
         justify-self: center;
     }
+}
 
+#albumList li a:focus {
+    img {
+        border-radius: 2px;
+        outline: 1px solid white;
+        border: 2px solid var(--mfgreen);
+    }
 }
 
 #albumList li a:hover .title,
@@ -215,7 +223,7 @@ img {
     max-width: 28ch;
 }
 
-.year {
+#albumList .year {
     font-size: 1rem;
     /* font-style: italic; */
     margin-top: 0.5rem;
@@ -295,8 +303,13 @@ body:has(.album-page) {
 
     p {
         display: block;
-        margin: 0.72rem 0;
+        margin: 0.32rem 0;
     }
+
+    h3 {
+        margin-top: 1.5rem;
+    }
+
 }
 
 #album-sidebar {
@@ -385,6 +398,10 @@ summary p {
 
 .lyrics {
     font-style: italic;
+
+    .not-italic {
+        font-style: normal;
+    }
 }
 
 #flightb741 {
@@ -427,6 +444,12 @@ summary p {
 
 #omnium {
     background: linear-gradient(to right, #FFC296, #A36960);
+}
+
+#fishies {
+    background: url("../images/textures/064.jpg"), #08689C;
+    background-size: contain;
+    background-blend-mode: lighten;
 }
 
 .label {
